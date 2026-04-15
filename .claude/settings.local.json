@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(mv temp-vite-project/* .)",
+      "Bash(mv temp-vite-project/.[!.]* .)",
+      "Bash(shopt -s dotglob)",
+      "Bash(mv temp-vite/* .)",
+      "Bash(mv temp-vite/.[!.]* .)",
+      "Bash(npm install *)",
+      "Bash(npx tailwindcss *)",
+      "Bash(node node_modules/tailwindcss/lib/bin.js init -p)"
+    ]
+  }
+}
