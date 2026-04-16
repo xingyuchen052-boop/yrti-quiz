@@ -1,73 +1,85 @@
-# React + TypeScript + Vite
+# YRTI - 音乐记忆测试
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+这是一个基于 React + TypeScript + Vite 开发的音乐记忆测试应用，旨在帮助用户发现与自己情感共鸣的音乐。
 
-Currently, two official plugins are available:
+## 项目介绍
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+YRTI 是一个互动式音乐测试应用，用户通过回答一系列问题，最终会得到一首与自己情感状态相匹配的歌曲推荐。应用的设计风格简约现代，带有一丝感性的艺术气息。
 
-## React Compiler
+## 技术栈
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19.2.4
+- TypeScript
+- Vite 8.0.4
+- React Router 7.14.1
+- Tailwind CSS 4.2.2
 
-## Expanding the ESLint configuration
+## 安装和运行
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 安装依赖
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 开发模式运行
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+### 构建生产版本
+
+```bash
+npm run build
+```
+
+### 预览生产构建
+
+```bash
+npm run preview
+```
+
+## 项目结构
+
+```
+├── public/              # 静态资源
+├── src/
+│   ├── assets/          # 图片和其他静态资源
+│   ├── data/            # 数据文件
+│   │   ├── calculator.ts  # 结果计算逻辑
+│   │   ├── questions.ts   # 测试问题
+│   │   └── songs.ts       # 歌曲数据
+│   ├── pages/           # 页面组件
+│   │   ├── Home.tsx      # 首页
+│   │   ├── Quiz.tsx      # 测试页面
+│   │   └── Result.tsx    # 结果页面
+│   ├── App.tsx          # 应用主组件
+│   ├── main.tsx         # 应用入口
+│   └── index.css        # 全局样式
+├── .gitignore          # Git 忽略文件
+├── package.json        # 项目配置
+├── tsconfig.json       # TypeScript 配置
+└── vite.config.ts      # Vite 配置
+```
+
+## 功能说明
+
+1. **首页**：展示应用标题和开始测试按钮
+2. **测试页面**：用户回答一系列与情感相关的问题
+3. **结果页面**：根据用户的回答推荐一首匹配的歌曲，并显示相关分析和歌词
+
+## 特色
+
+- 简约现代的UI设计
+- 流畅的动画效果
+- 个性化的音乐推荐
+- 响应式布局，适配不同设备
+
+## 贡献
+
+欢迎提交 Issue 和 Pull Request 来帮助改进这个项目！
+
+## 许可证
+
+MIT
